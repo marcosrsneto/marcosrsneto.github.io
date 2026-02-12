@@ -76,44 +76,72 @@ const PROJECTS = [
       "Modelo estrutural 3D em CYPE 3D",
       "Modelo interativo publicado no Sketchfab",
     ],
-    thumb: "img/obra1-1.png",
-    images: ["img/obra1-1.png", "img/obra1-2.png", "img/obra1-3.png", "img/obra1-4.png"],
+    thumb: "img/obra1-2.png",
+    images: ["img/obra1-2.png", "img/obra1-1.png", "img/obra1-3.png", "img/obra1-4.png"],
     captions: ["Imagem 1", "Imagem 2"],
     externalLink: "https://sketchfab.com/3d-models/as-built-galpao-65859f943633483caa1fbd645fedad04",
     externalLabel: "Ver modelo 3D interativo",
   },
   {
     id: "obra-02",
-    title: "Galpão metálico — otimização e revisão",
+    title: "Projeto estrutural — Residência unifamiliar (211 m²)",
     category: "Estrutural",
-    meta: "Região • 2024 • Metálica",
+    categories: ["Concreto armado"],
+    meta: "Arraial do Cabo/RJ • 2025 • Estrutural",
     desc:
-      "Revisão de solução estrutural e otimização de perfis, com suporte à montagem e organização de entregáveis.",
-    tags: ["Metálica", "Otimização", "Montagem"],
-    highlights: ["Otimização de perfis", "Modelagem/compatibilização", "Checklist de montagem"],
-    deliverables: ["Memorial", "Pranchas", "Lista de materiais"],
-    thumb: "img/obra2-1.jpg",
-    images: ["img/obra2-1.jpg"],
-    captions: ["Modelo / estrutura metálica"],
+      "Projeto estrutural completo de residência unifamiliar de dois pavimentos (211 m²), localizada no Condomínio Blue Lake, em Arraial do Cabo/RJ. Imóvel composto por 5 quartos, sendo 4 suítes, desenvolvido desde a concepção estrutural até o detalhamento executivo.",
+    tags: ["Concreto armado", "Residencial", "Eberick", "Alto padrão"],
+    highlights: [
+      "Concepção estrutural otimizada para maior desempenho e minimização de custos",
+      "Modelagem, análise e dimensionamento no Eberick",
+      "Compatibilização com projeto arquitetônico",
+      "Pranchas executivas limpas e altamente organizadas"
+    ],
+    deliverables: [
+      "Memorial de cálculo estrutural",
+      "Pranchas completas de formas e armações",
+      "Modelo 3D interativo publicado no Sketchfab",
+      "Detalhamento executivo de vigas, pilares, lajes e estacas",
+      "Quantitativo de aço e concreto"
+    ],
+    thumb: "img/obra2-1.png",
+    images: [
+      "img/obra2-1.png",
+      "img/obra2-2.png",
+      "img/obra2-3.png"
+    ],
+    captions: [
+      "Modelo estrutural no Eberick",
+      "Planta de formas do pavimento",
+      "Detalhamento estrutural"],
+    externalLink: "https://sketchfab.com/3d-models/casa-condominio-blue-lake-residence-club-1fedb35c891c44d1b16b9015dbc4858f",
+    externalLabel: "Ver modelo 3D interativo",
   },
+
   {
     id: "obra-03",
-    title: "Fundações profundas — estacas e blocos",
-    category: "Fundações",
-    meta: "JF/MG • 2024 • Estacas",
+    title: "Laudo estrutural para instalação de sistema fotovoltaico",
+    categories: ["Metálicas", "Laudos"],
+    meta: "Navegantes/SC • 2025 • Laudo",
     desc:
-      "Concepção e detalhamento com foco em sequência executiva e interface com canteiro. Rastreabilidade e notas de execução.",
-    tags: ["Estacas", "Blocos", "Locação"],
-    highlights: ["Sequência executiva", "Detalhes construtivos", "Compatibilização"],
-    deliverables: ["Planta de locação", "Detalhes de blocos", "Notas de execução"],
-    thumb: "img/obra3-1.jpg",
-    images: ["img/obra3-1.jpg", "img/obra3-2.jpg"],
-    captions: ["Locação / fundações", "Detalhe de bloco/armadura"],
+      "Elaboração de laudo técnico para verificação da capacidade resistente de cobertura metálica existente quanto à sobrecarga proveniente da instalação de módulos fotovoltaicos.",
+    tags: ["Laudo estrutural", "Energia solar", "Cobertura metálica", "CYPE 3D"],
+    highlights: [
+    "Modelagem estrutural no CYPE 3D",
+    "Verificação de esforços e deslocamentos",
+    "Análise de combinações de ações",
+    "Avaliação de ações de vento"],    
+    deliverables: [
+    "Laudo técnico estrutural",
+    "Memorial de cálculo",
+    "Modelo estrutural 3D do CYPE 3D"],
+    thumb: "img/obra3-1.png",
+    images: ["img/obra3-1.png", "img/obra3-3.png", "img/obra3-2.png"],
   },
   {
     id: "obra-04",
     title: "Inspeção de obra — Academia Bluefit",
-    category: "Inspeções",
+    categories: ["Inspeções", "Laudos"],
     meta: "Juiz de Fora/MG • 05/09/2025 • Inspeção",
     desc:
       "Vistoria técnica realizada após paralisação da obra por aproximadamente dois anos, com levantamento detalhado das condições atuais dos materiais estocados e executados. Avaliação de quantitativos e viabilidade técnica para retomada dos serviços.",
@@ -638,3 +666,4 @@ function refreshRevealObserver() {
     if (!el.classList.contains("isIn")) revealObserver.observe(el);
   });
 }
+
