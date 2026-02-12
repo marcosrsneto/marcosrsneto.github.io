@@ -76,6 +76,7 @@
           <div class="heroImg">
             <!-- Troque para uma imagem sua (render, obra, prancha, etc.) -->
             <img
+              id="easterEgg"
               src="capa.png"
               alt="Projeto estrutural"
               loading="lazy"
@@ -250,5 +251,42 @@
 
 
   <script src="script.js"></script>
+<script>
+  const avatar = document.getElementById("easterEgg");
+  const heroImage = document.querySelector(".heroImg img");
+  let clickCount = 0;
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.body.classList.add("dark");
+      heroImage.src = "capadark.png";
+    } else {
+      document.body.classList.remove("dark");
+      heroImage.src = "capa.png";
+    }
+
+    localStorage.setItem("theme", theme);
+  }
+
+  avatar.addEventListener("click", () => {
+    clickCount++;
+
+    if (clickCount === 5) {
+
+      const isDark = document.body.classList.contains("dark");
+      applyTheme(isDark ? "light" : "dark");
+
+      clickCount = 0; // reset imediato
+    }
+  });
+
+  // Mantém tema salvo ao recarregar
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  }
+</script>
+
+
 </body>
 </html>
