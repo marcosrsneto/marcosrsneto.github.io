@@ -892,3 +892,112 @@ button.heroMini__item{
   .heroMini__k{ margin: 0 !important; line-height: 1.1; }
   .heroMini__v{ margin-top: 6px !important; line-height: 1.2; }
 }
+
+
+
+
+/* =========================================================
+   DARK MODE REAL (quase preto, sem branco/cinza claro)
+   ========================================================= */
+
+body.dark {
+
+  --bg: #05070d;
+  --bg2: #0a0f1c;
+
+  --ink: #e6ecff;
+  --muted: #a8b3d9;
+  --muted2: #7f8bb3;
+
+  --card: #0f1629;
+  --line: rgba(255,255,255,.06);
+
+  --shadow: 0 20px 60px rgba(0,0,0,.6);
+  --shadow2: 0 12px 30px rgba(0,0,0,.5);
+
+  background: linear-gradient(180deg, #05070d, #0a0f1c);
+  color: var(--ink);
+}
+
+/* Topbar */
+body.dark .topbar{
+  background: rgba(10,15,28,.9);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Cards */
+body.dark .card,
+body.dark .portfolio-card,
+body.dark .contactRow,
+body.dark .heroImg,
+body.dark .modal__card,
+body.dark .modalBox,
+body.dark .hint {
+  background: #0f1629;
+  border-color: rgba(255,255,255,.06);
+  box-shadow: var(--shadow2);
+}
+
+/* Inputs */
+body.dark .field__i,
+body.dark .miniEmail__btn{
+  background: #0f1629;
+  border-color: rgba(255,255,255,.08);
+  color: var(--ink);
+}
+
+/* Botões não primários */
+body.dark .btn--outline,
+body.dark .btn--soft{
+  background: #111a30;
+  border-color: rgba(255,255,255,.08);
+  color: var(--ink);
+}
+
+/* Pills / filtros */
+body.dark .filter{
+  background: #111a30;
+  border-color: rgba(255,255,255,.08);
+  color: var(--muted);
+}
+
+body.dark .filter.isActive{
+  background: linear-gradient(135deg, #0b63f6, #2fb7ff);
+  color: #fff;
+}
+
+/* Modal fundo */
+body.dark .modalBack{
+  background: rgba(0,0,0,.75);
+}
+
+/* Footer */
+body.dark .footer{
+  background: #0a0f1c;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* Seção soft */
+body.dark .section--soft{
+  background: #0a0f1c;
+  border-color: rgba(255,255,255,.05);
+}
+
+
+/* ===============================
+   HERO MINI – DARK FIX
+   =============================== */
+
+body.dark .heroMini__item{
+  background: #0f172a;              /* fundo bem escuro */
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+body.dark .heroMini__k{
+  color: rgba(255,255,255,0.55);
+}
+
+body.dark .heroMini__v{
+  color: #ffffff;
+}
