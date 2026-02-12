@@ -89,7 +89,7 @@ const PROJECTS = [
     categories: ["Concreto armado"],
     meta: "Arraial do Cabo/RJ • 2025 • Estrutural",
     desc:
-      "Projeto estrutural completo de residência unifamiliar de dois pavimentos (211 m²), localizada no Condomínio Blue Lake, em Arraial do Cabo/RJ. Imóvel composto por 5 quartos, sendo 4 suítes, desenvolvido desde a concepção estrutural até o detalhamento executivo.",
+      "Projeto estrutural completo de residência unifamiliar de dois pavimentos (211 m²), localizada no Condomínio Blue Lake, em Arraial do Cabo/RJ. Imóvel composto por 5 quartos, sendo 4 suítes, desenvolvido desde a concepção estrutural até o detalhamento executivo. Devido à presença de água superficial, adotou-se solução com estacas para as fundações.",
     tags: ["Concreto armado", "Residencial", "Eberick", "Alto padrão"],
     highlights: [
       "Concepção estrutural otimizada para maior desempenho e minimização de custos",
@@ -108,7 +108,8 @@ const PROJECTS = [
     images: [
       "img/obra2-1.png",
       "img/obra2-2.png",
-      "img/obra2-3.png"
+      "img/obra2-3.png",
+      "img/obra2-4.png",
     ],
     captions: [
       "Modelo estrutural no Eberick",
@@ -666,3 +667,4 @@ function refreshRevealObserver() {
     if (!el.classList.contains("isIn")) revealObserver.observe(el);
   });
 }
+
