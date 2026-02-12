@@ -35,8 +35,10 @@
       <nav class="nav">
         <a href="#servicos">Serviços</a>
         <a href="#portfolio">Portfólio</a>
+        <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
       </nav>
+
 
       <div class="topbar__cta">
         <button class="btn btn--soft hideSm" id="copyEmailTop">
@@ -129,6 +131,81 @@
         <div class="portfolio-grid" id="portfolioGrid"></div>
       </div>
     </section>
+
+
+
+
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <div class="title reveal">
+          <div class="pill mono">SOLICITE SEU ORÇAMENTO</div>
+          <h2>Sobre mim</h2>
+          
+    </section>
+
+
+
+
+    <!-- Sobre -->
+    <section id="sobre" class="section section--soft">
+      <div class="container">
+        <div class="sobreRow">
+          
+          <div class="sobreRow__media reveal">
+            <img id="aboutPhoto" src="img/capa3.png" alt="Marcos Neto" class="sobrePhoto" loading="lazy">
+          </div>
+
+          <div class="contactGrid contactGrid--one">
+            <div class="card reveal">
+              <div class="card__head">
+                <div>
+                  <div class="card__title">Engenheiro Civil • UFJF</div>
+                  <div class="card__sub">Mestrando em Estruturas • UFJF</div>
+                </div>
+              </div>
+
+            <p style="margin:12px 0 0; color: var(--muted); line-height: 1.8">
+              Sou formado em Engenharia Civil pela Universidade Federal de Juiz de Fora e atualmente
+              curso mestrado em Estruturas pela mesma instituição. Possuo sólida formação acadêmica e ampla experiência prática em projetos e inspeções.
+            </p>
+
+            <p style="margin:12px 0 0; color: var(--muted); line-height: 1.8">
+              Atuo com foco em soluções otimizadas, viáveis e fáceis de executar, utilizando ferramentas como
+              Eberick, CYPE 3D e Revit para análises e modelagens precisas.
+            </p>
+
+            <p style="margin:12px 0 0; color: var(--muted); line-height: 1.8">
+              Meu compromisso é transformar as necessidades dos clientes em soluções estruturais inteligentes, seguras e executáveis.
+            </p>
+
+            <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap">
+              <a class="btn btn--primary"
+                href="https://wa.me/5532999518800?text=Ol%C3%A1%2C%20Marcos%21%20Vim%20do%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                target="_blank"
+                rel="noopener">
+                Solicitar orçamento
+              </a>
+
+              <a class="btn btn--outline" href="#portfolio">Ver portfólio</a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    
+
+
+
 
     <!-- Contato simples -->
     <section id="contato" class="section">
@@ -253,39 +330,96 @@
   <script src="script.js"></script>
 <script>
   const avatar = document.getElementById("easterEgg");
-  const heroImage = document.querySelector(".heroImg img");
+  const aboutEgg = document.getElementById("aboutPhoto");   
+
+  const heroImage   = document.querySelector(".heroImg img");
+  const brandAvatar = document.querySelector(".topbar .brand__avatar");
+  const footerAvatar = document.querySelector(".footer .brand__avatar");
+  const aboutPhoto  = document.getElementById("aboutPhoto");
+
   let clickCount = 0;
 
   function applyTheme(theme) {
-    if (theme === "dark") {
-      document.body.classList.add("dark");
-      heroImage.src = "capadark.png";
-    } else {
-      document.body.classList.remove("dark");
-      heroImage.src = "capa.png";
+    const isDark = theme === "dark";
+
+    // Classe no body
+    document.body.classList.toggle("dark", isDark);
+
+    // HERO
+    if (heroImage) {
+      heroImage.src = isDark ? "capadark.png" : "capa.png";
     }
 
+    // FOTO TOPO
+    if (brandAvatar) {
+      brandAvatar.src = isDark ? "img/capa2dark.png" : "img/capa2.png";
+    }
+
+    // FOTO FOOTER
+    if (footerAvatar) {
+      footerAvatar.src = isDark ? "img/capa2dark.png" : "img/capa2.png";
+    }
+
+    // FOTO SOBRE MIM
+    if (aboutPhoto) {
+      aboutPhoto.src = isDark ? "img/capa3dark.png" : "img/capa3.png";
+    }
+
+    // Salva preferência
     localStorage.setItem("theme", theme);
   }
 
-  avatar.addEventListener("click", () => {
+  avatar?.addEventListener("click", () => {
     clickCount++;
 
-    if (clickCount === 5) {
 
+    
+    if (clickCount === 5) {
       const isDark = document.body.classList.contains("dark");
       applyTheme(isDark ? "light" : "dark");
-
-      clickCount = 0; // reset imediato
+      clickCount = 0; // reset imediato após trocar
     }
   });
 
+
+    aboutEgg?.addEventListener("click", () => {
+    clickCount++;
+
+
+    
+    if (clickCount === 5) {
+      const isDark = document.body.classList.contains("dark");
+      applyTheme(isDark ? "light" : "dark");
+      clickCount = 0; // reset imediato após trocar
+    }
+  });
+
+
+    brandAvatar?.addEventListener("click", () => {
+    clickCount++;
+
+
+    
+    if (clickCount === 5) {
+      const isDark = document.body.classList.contains("dark");
+      applyTheme(isDark ? "light" : "dark");
+      clickCount = 0; // reset imediato após trocar
+    }
+  });
+
+
+
+
+
+
+  
   // Mantém tema salvo ao recarregar
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
     applyTheme(savedTheme);
   }
 </script>
+
 
 
 </body>
