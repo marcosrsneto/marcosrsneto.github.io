@@ -1106,7 +1106,7 @@ body.dark .heroMini__v{
 
   /* header não divide espaço com a foto */
   .card__head{
-    display: block;
+    display: flex;
   }
 
   /* espaço entre o header e a foto */
