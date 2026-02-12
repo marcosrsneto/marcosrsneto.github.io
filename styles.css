@@ -1082,29 +1082,46 @@ body.dark .heroMini__v{
   }
 }
 
-/* MOBILE */
-@media (max-width: 899px) {
 
-  .sobreRow {
-    display: block;
-  }
+/* =========================
+   SOBRE - MOBILE CORRETO
+   ========================= */
+@media (max-width: 899px){
 
-  /* esconde desktop */
-  .sobreRow__media {
+  /* Esconde versão desktop */
+  .sobreRow__media{
     display: none !important;
   }
 
-  #aboutPhotoMobile {
-    display: block;
+  /* Foto dentro do card */
+  #aboutPhotoMobile{
     float: right;
-    width: 250px;
-    margin: 0 0 5px 6px;
-    border-radius: 30px;
-    object-fit: cover;
+    width: clamp(96px, 30vw, 132px);  /* melhor que width fixa */
+    height: auto;
+    margin: 18px 0 10px 14px;         /* desce mais (ajuste fino aqui) */
+    border-radius: 14px;
+    object-fit: contain;
+    display: block;
   }
 
-  /* texto contorna imagem */
-  #sobre .card p {
-    text-align: left;
+  /* header não divide espaço com a foto */
+  .card__head{
+    display: block;
   }
-}
+
+  /* espaço entre o header e a foto */
+  .card__head + #aboutPhotoMobile{
+    margin-top: 18px;                 /* pode subir/baixar aqui */
+  }
+
+  /* CTA não pode ficar “puxado” pelo float */
+  #sobre .card .sobreCtas{
+    clear: both;
+    margin-top: 16px;
+  }
+
+  /* (Opcional) em telas MUITO estreitas, deixa a foto menor */
+  @media (max-width: 360px){
+    #aboutPhotoMobile{ width: 92px; }
+  }
+}  
