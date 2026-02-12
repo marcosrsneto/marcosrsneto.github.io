@@ -1,0 +1,1003 @@
+:root{
+  /* Base (mais “Stone-like”: branco, limpo, editorial) */
+  --bg:#ffffff;
+  --bg2:#f6f8fc;
+  --ink:#0a1428;      /* texto principal */
+  --muted:#3c4a63;    /* texto secundário */
+  --muted2:#6b7a96;   /* texto leve */
+  --line:rgba(10,20,40,.10);
+
+  /* Azul marca (forte, porém só onde precisa) */
+  --blue:#0b63f6;
+  --blue2:#2fb7ff;
+
+  --card:#ffffff;
+  --shadow: 0 16px 40px rgba(10,20,40,.10);
+  --shadow2: 0 10px 24px rgba(10,20,40,.08);
+
+  --r:18px;
+  --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  background: linear-gradient(180deg, var(--bg), var(--bg2));
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:0 16px}
+@media(min-width:900px){.container{padding:0 24px}}
+.mono{font-family:var(--mono)}
+.i{opacity:.9}
+
+/* ====== Background (REMOVE blueprint pesado; deixa só leve) ====== */
+.bg{position:fixed; inset:0; z-index:-1; pointer-events:none}
+.bg__grid{display:none} /* <- corta a grade pra ficar mais “construtora clean” */
+.bg__radial{
+  position:absolute; width:880px; height:680px; border-radius:999px;
+  filter: blur(70px); opacity:.20;
+}
+.bg__radial--a{
+  left:50%; top:-260px; transform:translateX(-50%);
+  background: radial-gradient(circle, rgba(11,99,246,.28), transparent 62%);
+}
+.bg__radial--b{
+  left:10%; bottom:-320px;
+  background: radial-gradient(circle, rgba(47,183,255,.28), transparent 62%);
+}
+
+/* ====== Topbar (mais “corporate”) ====== */
+.topbar{
+  position:fixed; inset:0 0 auto 0; z-index:50;
+  background: rgba(255,255,255,.86);
+  border-bottom:1px solid var(--line);
+  backdrop-filter: blur(14px);
+  transition: box-shadow .25s ease, background .25s ease;
+}
+.topbar.isScrolled{ box-shadow: 0 10px 26px rgba(10,20,40,.10); }
+.topbar__inner{display:flex;align-items:start;justify-content:space-between;gap:12px;padding:14px 0}
+
+.brand{display:flex;align-items:start;gap:12px}
+.brand__mark{
+  width:42px;height:42px;border-radius:14px;
+  display:grid;place-items:center;
+  font-weight:900; letter-spacing:.02em;
+  color:#fff;
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  box-shadow: 0 10px 22px rgba(11,99,246,.20);
+}
+.brand__mark--sm{width:36px;height:36px;border-radius:13px}
+.brand__name{font-weight:900;font-size:14px;line-height:1.1}
+.brand__meta{font-size:12px;color:var(--muted2);margin-top:2px}
+
+.nav{display:none;gap:6px}
+.nav a{
+  padding:10px 12px;border-radius:12px;
+  color:var(--muted);
+  transition:.18s ease;
+}
+.nav a:hover{background: rgba(11,99,246,.08); color: var(--ink)}
+@media(min-width:900px){.nav{display:flex}}
+
+.topbar__cta{display:flex;gap:10px;align-items:center}
+.hideSm{display:none}
+@media(min-width:900px){.hideSm{display:inline-flex}}
+
+/* ====== Buttons (menos “glass”, mais sólido) ====== */
+.btn{
+  border:1px solid var(--line);
+  background:#fff;
+  color: var(--ink);
+  padding:11px 14px;
+  border-radius: 14px;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  cursor:pointer;
+  transition: transform .08s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
+  user-select:none;
+}
+.btn:hover{box-shadow: var(--shadow2)}
+.btn:active{transform:scale(.99)}
+
+.btn--primary{
+  border-color: rgba(11,99,246,.25);
+  color:#fff;
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  box-shadow: 0 14px 30px rgba(11,99,246,.18);
+}
+.btn--primary:hover{box-shadow: 0 18px 36px rgba(11,99,246,.22)}
+.btn--outline{
+  border-color: rgba(11,99,246,.22);
+  background: rgba(11,99,246,.06);
+}
+.btn--soft{
+  background:#fff;
+  border-color: rgba(10,20,40,.14);
+}
+.btn--full{width:100%}
+
+/* ====== HERO (mais “editorial”, mais espaço, tipografia forte) ====== */
+.hero--clean{ padding-top: 92px; }
+.heroClean{
+  padding: 44px 0 56px;
+  display: grid;
+  gap: 22px;
+}
+@media(min-width: 900px){
+  .heroClean{ grid-template-columns: 1.05fr .95fr; align-items: start; gap: 36px; }
+}
+.heroClean__title{
+  margin:0;
+  font-size: 44px;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+
+
+@media(min-width: 900px){ .heroClean__title{ font-size: 62px; } }
+
+.heroClean__lead{
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 58ch;
+  font-size: 16px;
+}
+.heroClean__ctas{
+  margin-top: 22px;
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.heroImg{
+  border-radius: var(--r);
+  border: 1px solid rgba(10,20,40,.10);
+  background:#fff;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.heroImg img{
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display:block;
+  transition: transform .6s ease;
+}
+.heroImg:hover img{ transform: scale(1.06); }
+@media(min-width: 600px){ .heroImg img{ height: 460px; } }
+
+.heroMini{
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+@media(min-width: 520px){ .heroMini{ grid-template-columns: 1fr 1fr; } }
+.heroMini__item{
+  display:block;              width:100%;
+  text-align:left;
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.78);
+  border-radius: 16px;
+  padding: 12px;
+}
+.heroMini__item:link,
+.heroMini__item:visited{
+  color: inherit;
+  text-decoration: none;
+}
+
+.heroMini__k{ font-size: 12px; color: var(--muted2); font-weight: 800; letter-spacing:.02em; }
+.heroMini__v{ margin-top: 6px; font-weight: 900; }
+button.heroMini__item{
+  appearance:none;
+  -webkit-appearance:none;
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.78);
+  font: inherit;
+  cursor: pointer;
+}
+.heroMini__item:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow2);
+}
+
+.heroMini__item:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(11,99,246,.18);
+}
+
+/* ====== Sections (mais limpo) ====== */
+.section{padding:20px 0}
+.section--soft{
+  background: rgba(255,255,255,.78);
+  border-top:1px solid rgba(10,20,40,.06);
+  border-bottom:1px solid rgba(10,20,40,.06);
+}
+.title{max-width:860px;margin:0 auto;text-align:center}
+.pill{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(11,99,246,.22);
+  background: rgba(11,99,246,.06);
+  color: rgba(11,99,246,.92);
+  font-size:11px;
+  letter-spacing:.14em;
+}
+.title h2{margin:14px 0 0;font-size:36px;letter-spacing:-.03em}
+.title p{margin:12px 0 0;color:var(--muted);line-height:1.8}
+
+/* ====== grids ====== */
+.grid3{display:grid;gap:16px;margin-top:26px}
+@media(min-width:720px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.grid3{grid-template-columns:repeat(3,1fr)}}
+
+/* ====== Cards (mais “construtora”: simples e consistente) ====== */
+.card{
+  border:1px solid rgba(10,20,40,.10);
+  background: var(--card);
+  border-radius: var(--r);
+  box-shadow: 0 10px 24px rgba(10,20,40,.08);
+  padding:18px;
+  position:relative; overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover{ transform: translateY(-4px); box-shadow: var(--shadow); }
+
+.card__head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.card__title{font-weight:900}
+.card__sub{margin-top:6px;color:var(--muted2);font-size:12px}
+.badge{
+  border:1px solid rgba(10,20,40,.12);
+  padding:6px 10px;
+  border-radius:999px;
+  background: #f3f6ff;
+  color: rgba(10,20,40,.72);
+}
+
+/* ====== Filters ====== */
+.filters{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.filter{
+  border:1px solid rgba(10,20,40,.12);
+  background:#fff;
+  padding:10px 14px;border-radius:999px;
+  color: var(--muted);
+  cursor:pointer;
+  transition:.18s ease;
+}
+.filter:hover{background: rgba(11,99,246,.08); color: var(--ink)}
+.filter.isActive{
+  background: linear-gradient(135deg, rgba(11,99,246,.16), rgba(47,183,255,.12));
+  border-color: rgba(11,99,246,.25);
+  color: var(--ink);
+}
+
+/* ====== PORTFÓLIO (mais “galeria” e menos “card de app”) ====== */
+.portfolio-grid{ margin-top: 22px; display:grid; gap: 16px; }
+@media(min-width: 720px){ .portfolio-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media(min-width: 1100px){ .portfolio-grid{ grid-template-columns: repeat(3, 1fr); } }
+
+.portfolio-card{
+  border:1px solid rgba(10,20,40,.10);
+  background:#fff;
+  border-radius: var(--r);
+  overflow:hidden;
+  box-shadow: 0 10px 24px rgba(10,20,40,.08);
+  cursor:pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.portfolio-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow); }
+
+.portfolio-thumb{
+  width:100%;
+  height: 210px;
+  object-fit: cover;
+  display:block;
+  filter: contrast(1.02) saturate(1.02);
+  transform: scale(1.01);
+  transition: transform .6s ease;
+}
+.portfolio-card:hover .portfolio-thumb{ transform: scale(1.06); }
+
+.portfolio-body{ padding: 16px 16px 18px; }
+.portfolio-title{ margin:0; font-size: 16px; font-weight: 900; letter-spacing:-.01em; }
+.portfolio-cat{
+  margin-top: 8px;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  font-size: 12px;
+  color: rgba(11,99,246,.95);
+  font-weight: 700;
+}
+.dot{ width:8px;height:8px;border-radius:99px; background: var(--blue); }
+.portfolio-meta{
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ====== Contact ====== */
+.contactGrid{display:grid;gap:16px;margin-top:22px}
+@media(min-width:1000px){.contactGrid{grid-template-columns: 5fr 7fr}}
+
+.contactRow{
+  width:100%;
+  border:1px solid rgba(10,20,40,.10);
+  background:#fff;
+  border-radius: 16px;
+  padding:14px;
+  display:flex;gap:12px;align-items:center;
+  cursor:pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.contactRow:hover{transform: translateY(-3px); box-shadow: var(--shadow2)}
+.contactRow__icon{
+  width:44px;height:44px;border-radius:16px;
+  display:grid;place-items:center;
+  background: rgba(11,99,246,.10);
+  border:1px solid rgba(11,99,246,.18);
+  color: rgba(10,20,40,.90);
+  font-weight:900;
+}
+.contactRow__t{font-weight:900}
+.contactRow__m{margin-top:2px;color:var(--muted2);font-size:12px}
+.contactRow__go{margin-left:auto;color:var(--muted2)}
+.contactRow__chip{
+  margin-left:auto;
+  padding:7px 10px;border-radius:999px;
+  border:1px solid rgba(10,20,40,.12);
+  background: #f3f6ff;
+  color: rgba(10,20,40,.75);
+}
+.hint{
+  margin-top:14px;
+  border:1px solid rgba(10,20,40,.10);
+  border-radius:16px;
+  padding:14px;
+  background:#fff;
+}
+.hint__t{font-weight:900}
+.hint__l{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.8}
+
+/* form */
+.form{margin-top:10px;display:grid;gap:12px}
+@media(min-width:720px){.form{grid-template-columns:repeat(2,1fr)}}
+.field{display:block}
+.field--span2{grid-column:1 / -1}
+.field__l{display:block;font-size:12px;color:var(--muted2);font-weight:900;margin-bottom:6px}
+.field__i{
+  width:100%;
+  padding:13px 12px;
+  border-radius: 14px;
+  border:1px solid rgba(10,20,40,.12);
+  background:#fff;
+  color: var(--ink);
+  outline:none;
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+.field__i:focus{
+  border-color: rgba(11,99,246,.30);
+  box-shadow: 0 0 0 3px rgba(11,99,246,.12);
+}
+.field__ta{resize:none}
+
+.note{display:flex;align-items:center;gap:10px;color:var(--muted2);font-size:12px}
+.pulse{
+  width:10px;height:10px;border-radius:99px;background: rgba(11,99,246,.40);
+  box-shadow: 0 0 0 0 rgba(11,99,246,.20);
+  animation: pulse 1.6s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(11,99,246,.18)}
+  70%{box-shadow:0 0 0 10px rgba(11,99,246,0)}
+  100%{box-shadow:0 0 0 0 rgba(11,99,246,0)}
+}
+
+/* Footer */
+.footer{
+  border-top:1px solid rgba(10,20,40,.08);
+  padding:26px 0;
+  background: rgba(255,255,255,.84);
+}
+.footer__inner{display:flex;flex-direction:column;gap:12px}
+@media(min-width:900px){.footer__inner{flex-direction:row;align-items:center;justify-content:space-between}}
+.footer__left{display:flex;align-items:center;gap:10px}
+.footer__name{font-weight:900}
+.footer__meta{color:var(--muted2);font-size:12px}
+.footer__right{color:var(--muted2);font-size:12px}
+
+/* To top */
+.toTop{
+  position:fixed; right:16px; bottom:16px; z-index:60;
+  display:none;
+  border:1px solid rgba(10,20,40,.12);
+  background: rgba(255,255,255,.90);
+  padding:10px 12px;border-radius:14px;
+  color:var(--muted);
+  box-shadow: var(--shadow2);
+}
+.toTop:hover{background:#fff}
+@media(min-width:900px){.toTop{right:24px;bottom:24px}}
+
+/* ====== MODAL (clean, “galeria”) ====== */
+.modalBack{
+  position:fixed; inset:0; z-index:80;
+  background: rgba(10,20,40,.58);
+  backdrop-filter: blur(10px);
+  display:none;
+}
+.modal{
+  position:fixed; inset:0; z-index:81;
+  display:none; align-items:center; justify-content:center;
+  padding:16px;
+}
+.modal__card{
+  width:100%; max-width:980px;
+  border-radius: var(--r);
+  border:1px solid rgba(255,255,255,.22);
+  background:#fff;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.modal__head{
+  padding:16px 18px;
+  border-bottom:1px solid rgba(10,20,40,.10);
+  display:flex;justify-content:space-between;gap:12px;align-items:flex-start;
+}
+.modal__eyebrow{font-size:11px;color:var(--muted2);letter-spacing:.14em}
+.modal__title{margin-top:6px;font-weight:900;font-size:18px}
+.modal__meta{margin-top:6px;color:var(--muted2);font-size:12px;line-height:1.4}
+.iconBtn{
+  width:40px;height:40px;border-radius:14px;
+  border:1px solid rgba(10,20,40,.12);
+  background:#fff;
+  cursor:pointer;
+}
+.iconBtn:hover{background:#f6f8fc}
+.modal__body{padding:18px}
+
+.modal__gallery{
+  position: relative;
+  border-radius: 16px;
+  overflow:hidden;
+  border:1px solid rgba(10,20,40,.10);
+  background:#fff;
+  box-shadow: var(--shadow2);
+}
+.modalImg{
+  width:100%;
+  height: 440px;
+  object-fit: cover;
+  display:block;
+}
+@media(max-width: 520px){ .modalImg{ height: 300px; } }
+
+.navBtn{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:44px;height:44px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.35);
+  background: rgba(11,99,246,.88);
+  color:#fff;
+  cursor:pointer;
+  display:grid;place-items:center;
+  font-size: 22px;
+}
+.navBtn:hover{ background: rgba(11,99,246,1); }
+.navBtn--left{ left:12px; }
+.navBtn--right{ right:12px; }
+
+.modal__caption{ margin-top: 10px; color: rgba(10,20,40,.55); font-size: 12px; }
+.modal__summary{ margin: 12px 0 0; color: var(--muted); line-height: 1.8; }
+.modal__tags{ margin-top: 12px; display:flex; flex-wrap:wrap; gap:8px; }
+.tag{
+  font-size:11px;
+  padding:7px 10px;border-radius:999px;
+  border:1px solid rgba(10,20,40,.10);
+  background: #f6f8fc;
+  color: rgba(10,20,40,.70);
+}
+
+.modal__cols{ margin-top:14px; display:grid; gap:12px; }
+@media(min-width:900px){.modal__cols{grid-template-columns:repeat(2,1fr)}}
+.modalBox{
+  border:1px solid rgba(10,20,40,.10);
+  background: #fff;
+  border-radius: 16px;
+  padding:14px;
+}
+.modalBox__t{font-weight:900}
+.modalBox__l{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.8}
+
+.modal__cta{
+  margin-top:14px;
+  border:1px solid rgba(11,99,246,.18);
+  background: rgba(11,99,246,.06);
+  border-radius:16px;
+  padding:12px 14px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.modal__ctaT{font-weight:900}
+
+/* ====== Reveal ====== */
+.reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.75,.2,1);
+}
+.reveal.isIn{ opacity:1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .pulse{animation:none}
+  .btn,.portfolio-card,.contactRow,.card{transition:none}
+}
+
+.modal__card{
+  max-height: calc(100vh - 32px); /* respeita o padding do .modal */
+  display: flex;
+  flex-direction: column;
+}
+.brand__avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(37, 99, 235, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  cursor: pointer;
+}
+
+.brand__avatar--sm {
+  width: 40px;
+  height: 40px;
+}
+
+/* Hover elegante */
+.brand__avatar:hover {
+  transform: translateY(-3px) scale(1.08);
+  border-color: rgba(37, 99, 235, 0.6);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.15),
+    0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.modal__body{
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 120px); /* evita estourar por causa do header */
+  padding-bottom: 18px;
+}
+
+/* Contact: versão WhatsApp-first */
+.contactGrid--one{ grid-template-columns: 1fr; max-width: 860px; margin-left:auto; margin-right:auto; }
+
+.contactRow--primary{
+  border-color: rgba(11,99,246,.28);
+  background: linear-gradient(135deg, rgba(11,99,246,.10), rgba(47,183,255,.08));
+}
+.contactRow__icon--primary{
+  background: rgba(11,99,246,.16);
+  border-color: rgba(11,99,246,.26);
+}
+
+#contato .contactRow {
+  margin-top: 12px;
+}
+
+.miniEmail{ margin-top: 14px; }
+.miniEmail__t{ font-size: 11px; letter-spacing: .14em; color: rgba(10,20,40,.55); margin-bottom: 8px; }
+.miniEmail__btn{
+  width:100%;
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  border:1px solid rgba(10,20,40,.10);
+  background:#fff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  cursor:pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.miniEmail__btn:hover{ transform: translateY(-2px); box-shadow: var(--shadow2); }
+.miniEmail__chip{
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(10,20,40,.12);
+  background: #f6f8fc;
+  color: rgba(10,20,40,.72);
+}
+
+/* ============================
+   FIX: topbar não tampar o hero + mais respiro lateral
+   ============================ */
+
+/* 1) Garantir que o conteúdo nunca fique “por baixo” da topbar */
+:root{
+  --topbar-h: 96px; /* ajuste fino: 88–112px dependendo do seu topo */
+}
+
+@media (max-width: 720px){
+  /* se sua topbar for position: fixed/sticky, isso resolve de forma robusta */
+  body{ padding-top: var(--topbar-h); }
+
+  /* evita duplicar espaço caso você já tenha padding no hero */
+  .hero--clean{ padding-top: 0 !important; }
+}
+
+/* 2) Mais margem lateral no mobile (o seu texto está encostando) */
+@media (max-width: 720px){
+  .container{
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* respiro extra específico do hero */
+  .heroClean__text{
+    padding-top: 10px;
+  }
+}
+
+/* 3) (Opcional mas recomendado) Topbar com fundo sólido e sem “vazar” */
+@media (max-width: 720px){
+  .topbar{
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* se o seu topo tiver borda/sombra, mantém leve */
+  .topbar.isScrolled{
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
+}
+/* Ajuste fino do "buraco" entre HERO e SERVIÇOS (desktop e mobile) */
+
+/* 1) Tira o excesso do final do hero */
+.heroClean{
+  padding-bottom: 10px; /* era 56px */
+}
+
+/* 2) Reduz o topo da seção Serviços (sem mexer nas outras seções) */
+#servicos.section{
+  padding-top: 25px; /* era 84px (herdado do .section) */
+}
+
+/* 3) Se ainda ficar grande, normalmente é margem do título; reduz só em serviços */
+#servicos .title{
+  margin-top: 0;
+}
+#servicos .title h2{
+  margin-top: 10px; /* era 14px */
+}
+#servicos .title p{
+  margin-top: 8px;  /* era 12px */
+}
+
+/* =========================================================
+   HERO (desktop): direita com largura fixa + foto SEM CORTE
+   Cole NO FINAL do CSS
+   ========================================================= */
+
+@media (min-width: 900px){
+
+  /* 1) Travar a coluna direita */
+  .heroClean{
+    grid-template-columns: 1fr 420px;  /* ajuste se quiser: 500–560 */
+    align-items: start;
+    gap: 36px;
+    padding-bottom: 18px;             /* reduz “buraco” abaixo do hero */
+  }
+
+  .heroClean > :last-child{
+    width: 420px;
+    max-width: 420px;
+    justify-self: end;
+  }
+
+  /* 2) Foto: tirar height fixo e NÃO cortar (contain) */
+  .heroImg{
+    /* controla a “altura” do bloco da foto sem cortar */
+    max-height: 420px;                /* ajuste fino: 280–340 */
+    padding: 10px;                    /* cria respiro e ajuda a caber inteiro */
+    background: #fff;
+  }
+
+  .heroImg img{
+    width: 50%;
+    height: auto !important;          /* <- remove o height fixo que você tinha */
+    max-height: 300px;                /* max-height = max-height do heroImg - padding */
+    object-fit: contain;              /* <- NÃO corta */
+    object-position: center;
+    display: block;
+    transform: none !important;       /* remove zoom */
+  }
+
+
+  /* 4) Aproximar os cards Whats/Instagram da foto para reduzir altura do bloco direito */
+  .heroMini{ margin-top: 10px; }
+}
+
+
+@media (min-width: 900px){
+
+  /* 1) Coluna direita mais estreita */
+  .heroClean{
+    grid-template-columns: 1fr 340px; /* ajuste: 400–480 */
+    gap: 36px;
+    align-items: start;
+  }
+
+  /* 2) Travar largura REAL do wrapper da direita */
+  .heroClean > :last-child{
+    width: 340px;
+    max-width: 340px;
+    justify-self: end;
+  }
+
+  /* 3) Garantir que os filhos não estiquem além */
+  .heroImg,
+  .heroMini{
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* 4) Foto: sem corte e sem “zoom” */
+  .heroImg{
+    max-height: 300px;  /* diminui um pouco a altura junto */
+    padding: 0px;
+  }
+
+  .heroImg img{
+    width: 100%;
+    height: auto !important;
+    max-height: 280px;
+    object-fit: contain;
+  }
+}
+
+
+@media (min-width: 900px){
+  .heroImg img{
+    transition: transform .55s ease !important;
+    transform: scale(1) !important;
+    transform-origin: center center;
+    will-change: transform;
+  }
+  .heroImg:hover img{
+    transform: scale(1.06) !important;
+  }
+}
+
+
+
+/* =========================================================
+   HERO (mobile): foto à esquerda, Whats+Instagram empilhados à direita
+   Cole NO FINAL do CSS
+   ========================================================= */
+
+@media (max-width: 899px){
+
+  /* layout geral do hero em 1 coluna */
+  .heroClean{ grid-template-columns: 1fr !important; }
+
+  /* wrapper da direita (foto + mini cards) vira 2 colunas */
+  .heroClean > :last-child{
+    display: grid !important;
+    grid-template-columns: 96px 1fr;  /* foto | contatos */
+    gap: 12px;
+    align-items: start;
+  }
+
+  /* FOTO pequena (sem corte) */
+  .heroImg{
+    grid-column: 1;
+    padding: 0 !important;
+    height: 96px;
+    max-height: none !important;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .heroImg img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;     /* não corta */
+    object-position: center top;
+    transform: none !important;
+  }
+
+  /* CONTATOS sempre na coluna 2, empilhados */
+  .heroMini{
+    grid-column: 2;
+    margin-top: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;  /* <- mata o 1fr 1fr do 520px */
+    gap: 10px;
+  }
+
+  /* garante que cada card ocupe 100% da coluna 2 */
+  .heroMini__item{
+    width: 100% !important;
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   PATCH: alinhamento perfeito (mobile) foto = altura exata dos 2 cards
+   Cole NO FINAL do CSS
+   ========================================================= */
+@media (max-width: 900px){
+
+  .heroClean__media{
+    display: grid !important;
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: 1fr 1fr;   /* <- força 2 linhas iguais */
+    gap: 12px;
+    align-items: stretch;          /* <- estica tudo para mesma altura da linha */
+  }
+
+  /* FOTO: ocupa as 2 linhas (altura = soma exata dos 2 cards + gap) */
+  .heroImg{
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    height: auto !important;       /* <- remove a altura fixa */
+    aspect-ratio: 1 / 1;           /* mantém quadrado “bonito” */
+    align-self: stretch;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 0 !important;
+  }
+  .heroImg img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;   /* sem cortar */
+    object-position: center top;
+    transform: none !important;
+  }
+
+  /* CARDS: mesma “altura visual” */
+  .heroClean__media > .heroMini__item{
+    grid-column: 2;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 4px 10px !important;  /* padroniza */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;        /* centraliza conteúdo dentro */
+    min-height: 0;
+  }
+
+  .heroClean__media > .heroMini__item:nth-of-type(1){ grid-row: 1; }
+  .heroClean__media > .heroMini__item:nth-of-type(2){ grid-row: 2; }
+
+  /* Remove qualquer margem extra interna que esteja empurrando alturas */
+  .heroMini__k{ margin: 0 !important; line-height: 1.1; }
+  .heroMini__v{ margin-top: 6px !important; line-height: 1.2; }
+}
+
+
+
+
+/* =========================================================
+   DARK MODE REAL (quase preto, sem branco/cinza claro)
+   ========================================================= */
+
+body.dark {
+
+  --bg: #05070d;
+  --bg2: #0a0f1c;
+
+  --ink: #e6ecff;
+  --muted: #a8b3d9;
+  --muted2: #7f8bb3;
+
+  --card: #0f1629;
+  --line: rgba(255,255,255,.06);
+
+  --shadow: 0 20px 60px rgba(0,0,0,.6);
+  --shadow2: 0 12px 30px rgba(0,0,0,.5);
+
+  background: linear-gradient(180deg, #05070d, #0a0f1c);
+  color: var(--ink);
+}
+
+/* Topbar */
+body.dark .topbar{
+  background: rgba(10,15,28,.9);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Cards */
+body.dark .card,
+body.dark .portfolio-card,
+body.dark .contactRow,
+body.dark .heroImg,
+body.dark .modal__card,
+body.dark .modalBox,
+body.dark .hint {
+  background: #0f1629;
+  border-color: rgba(255,255,255,.06);
+  box-shadow: var(--shadow2);
+}
+
+/* Inputs */
+body.dark .field__i,
+body.dark .miniEmail__btn{
+  background: #0f1629;
+  border-color: rgba(255,255,255,.08);
+  color: var(--ink);
+}
+
+/* Botões não primários */
+body.dark .btn--outline,
+body.dark .btn--soft{
+  background: #111a30;
+  border-color: rgba(255,255,255,.08);
+  color: var(--ink);
+}
+
+/* Pills / filtros */
+body.dark .filter{
+  background: #111a30;
+  border-color: rgba(255,255,255,.08);
+  color: var(--muted);
+}
+
+body.dark .filter.isActive{
+  background: linear-gradient(135deg, #0b63f6, #2fb7ff);
+  color: #fff;
+}
+
+/* Modal fundo */
+body.dark .modalBack{
+  background: rgba(0,0,0,.75);
+}
+
+/* Footer */
+body.dark .footer{
+  background: #0a0f1c;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* Seção soft */
+body.dark .section--soft{
+  background: #0a0f1c;
+  border-color: rgba(255,255,255,.05);
+}
+
+
+/* ===============================
+   HERO MINI – DARK FIX
+   =============================== */
+
+body.dark .heroMini__item{
+  background: #0f172a;              /* fundo bem escuro */
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+body.dark .heroMini__k{
+  color: rgba(255,255,255,0.55);
+}
+
+body.dark .heroMini__v{
+  color: #ffffff;
+}
