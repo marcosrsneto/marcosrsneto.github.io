@@ -1267,3 +1267,8 @@ body.dark .heroMini__v{
 .instaPillBtn:hover{
   transform: translateY(-1px);
 }
+
+
+section#contato-rapido.section {
+  padding-top: 10px;
+}

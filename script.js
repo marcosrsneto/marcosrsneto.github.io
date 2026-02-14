@@ -32,19 +32,22 @@ const SERVICES = [
     url: "/servicos/acompanhamento-de-obras/"
   },
   {
-    title: "Regularização",
+    title: "Aprovação na prefeitura e regularização",
     meta: "Documentação • Adequações • Aprovação",
-    desc: "Geração de pranchas e suporte para regularização de lotes, imóveis ou obras, seguindo as normas técnicas.",
+    desc: "Geração de pranchas e projetos de aprovação na prefeitura, habite-se e regularização de imóveis ou obras.",
+    url: "/servicos/aprovacao-e-regularizacao/"
   },
   {
     title: "Usucapião",
     meta: "Levantamento técnico • Memorial descritivo • ART",
     desc: "Projeto e documentação técnica para processos judiciais e extrajudiciais.",
+    url: "/servicos/usucapiao/"
   },
   {
     title: "As built",
     meta: "Levantamento • Atualização de projeto • Planejamento",
     desc: "Atualização da obra executada, garantindo segurança documental e planejamento futuro.",
+    url: "/servicos/as-built/"
   },
 ];
 
