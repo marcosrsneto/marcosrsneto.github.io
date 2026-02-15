@@ -1,31 +1,34 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <!-- Charset e viewport -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO Primário -->
-  <title>Engenheiro Civil Marcos Neto | Projetos e Laudos - Juiz de Fora e região</title>
+  <title>Engenheiro Civil Marcos Neto | Projetos, Laudos e Obras em Juiz de Fora</title>
   <meta name="description"
-        content="Engenheiro civil em Juiz de Fora – MG. Projetos estruturais, laudos, obras, vistorias, consultorias e usucapião. Atendimento para todo o Brasil." />
-  <link rel="canonical" href="https://marcosneto.com.br/" />
+        content="Engenheiro civil em Juiz de Fora e Cataguases (MG). Projetos estruturais, laudos e vistorias, acompanhamento de obras, regularização e as built. Atendimento para todo o Brasil." />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Marcos Neto" />
-  <meta name="keywords"
-        content="engenheiro civil, projeto estrutural, laudo técnico, vistoria técnica, patologias em edificações, fundações, cálculo estrutural, engenheiro juiz de fora, engenheiro civil juiz de fora" />
+  <link rel="canonical" href="https://marcosneto.com.br/" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/favoricon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png">
-  <link rel="apple-touch-icon" href="/img/favicon.png">
+  <!-- (Opcional) keywords não ajudam muito hoje, mas não atrapalham -->
+  <meta name="keywords"
+        content="engenheiro civil juiz de fora, engenheiro civil cataguases, projeto estrutural, laudo técnico, vistoria técnica, acompanhamento de obras, regularização, as built" />
+
+  <!-- Favicons (arquivos na RAIZ do site) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Engenheiro Marcos Neto">
-  <meta property="og:title" content="Engenheiro Civil Marcos Neto | Projetos e Obras">
+  <meta property="og:title" content="Engenheiro Civil Marcos Neto | Projetos, Laudos e Consultoria">
   <meta property="og:description"
-        content="Projetos estruturais, laudos e vistorias, acompanhamento de obras e regularização. Atendimento para todo o Brasil.">
+        content="Projetos estruturais, laudos e vistorias, acompanhamento de obras e regularização. Atendimento em Juiz de Fora e Cataguases, e remoto para todo o Brasil.">
   <meta property="og:url" content="https://marcosneto.com.br/">
   <meta property="og:image" content="https://marcosneto.com.br/img/capa2.png">
   <meta property="og:locale" content="pt_BR">
@@ -34,57 +37,79 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Engenheiro Civil Marcos Neto">
   <meta name="twitter:description"
-        content="Projetos estruturais, laudos técnicos e consultoria para obras seguras e executáveis.">
+        content="Projetos estruturais, laudos técnicos e consultoria para obra segura e executável.">
   <meta name="twitter:image" content="https://marcosneto.com.br/img/capa2.png">
 
   <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "@id":"https://marcosneto.com.br/#business",
-    "name":"Engenheiro Civil Marcos Neto",
-    "url":"https://marcosneto.com.br/",
-    "image":"https://marcosneto.com.br/img/capa2.png",
-    "telephone":"+55-32-99951-8800",
-    "email":"marcosrsneto@gmail.com",
-    "priceRange":"$$",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Juiz de Fora",
-      "addressRegion":"MG",
-      "addressCountry":"BR"
-    },
-    "areaServed":[
-      { "@type":"Country", "name":"Brasil" },
-      { "@type":"State", "name":"Minas Gerais" },
-      { "@type":"City", "name":"Juiz de Fora" },
-      { "@type":"City", "name":"Cataguases" }
+    "@graph":[
+      {
+        "@type":"ProfessionalService",
+        "@id":"https://marcosneto.com.br/#business",
+        "name":"Engenheiro Civil Marcos Neto",
+        "url":"https://marcosneto.com.br/",
+        "image":"https://marcosneto.com.br/img/capa2.png",
+        "telephone":"+55-32-99951-8800",
+        "email":"marcosrsneto@gmail.com",
+        "priceRange":"$$",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"Juiz de Fora",
+          "addressRegion":"MG",
+          "addressCountry":"BR"
+        },
+        "areaServed":[
+          { "@type":"City", "name":"Juiz de Fora", "address": { "@type":"PostalAddress", "addressRegion":"MG", "addressCountry":"BR" } },
+          { "@type":"City", "name":"Cataguases", "address": { "@type":"PostalAddress", "addressRegion":"MG", "addressCountry":"BR" } },
+          { "@type":"State", "name":"Minas Gerais", "address": { "@type":"PostalAddress", "addressCountry":"BR" } },
+          { "@type":"Country", "name":"Brasil" }
+        ],
+        "sameAs":[
+          "https://instagram.com/marcosneto.eng"
+        ],
+        "hasOfferCatalog":{
+          "@type":"OfferCatalog",
+          "name":"Serviços de Engenharia",
+          "itemListElement":[
+            { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Projeto estrutural" } },
+            { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Laudos e vistorias" } },
+            { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Acompanhamento de obras" } },
+            { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Aprovação e regularização" } },
+            { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Usucapião (documentação técnica)" } },
+            { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"As built (conforme executado)" } }
+          ]
+        }
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://marcosneto.com.br/#website",
+        "url":"https://marcosneto.com.br/",
+        "name":"Engenheiro Civil Marcos Neto",
+        "inLanguage":"pt-BR"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://marcosneto.com.br/#webpage",
+        "url":"https://marcosneto.com.br/",
+        "name":"Engenheiro Civil Marcos Neto | Projetos e Laudos em Juiz de Fora",
+        "isPartOf":{"@id":"https://marcosneto.com.br/#website"},
+        "about":{"@id":"https://marcosneto.com.br/#business"},
+        "inLanguage":"pt-BR"
+      }
     ]
-    "sameAs":[
-      "https://instagram.com/marcosneto.eng"
-    ],
-    "hasOfferCatalog":{
-      "@type":"OfferCatalog",
-      "name":"Serviços de Engenharia",
-      "itemListElement":[
-        { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Projeto estrutural" } },
-        { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Laudos e vistorias" } },
-        { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Acompanhamento de obras" } },
-        { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Aprovação e regularização" } },
-        { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Usucapião (documentação técnica)" } },
-        { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"As built (conforme executado)" } }
-      ]
-    }
   }
   </script>
-   <link rel="stylesheet" href="/styles.css" />
-
 </head>
+
 
 <body>
   <!-- Background blueprint leve -->
