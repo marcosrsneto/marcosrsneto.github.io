@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <!-- SEO primário -->
-  <title>Acompanhamento de Obras | Engenheiro Marcos Neto</title>
-  <meta name="description" content="Acompanhamento de obras focado em qualidade e redução de retrabalho. Responsabilidade técnica, vistorias, checklists e orientações para execução mais segura e eficiente." />
+  <title>Acompanhamento de Obras em Juiz de Fora – MG | Eng. Marcos Neto</title>
+  <meta name="description" content="Acompanhamento de obras em Juiz de Fora. Responsabilidade técnica, vistorias, checklists e orientações para execução mais segura e de qualidade." />
   <link rel="canonical" href="https://marcosneto.com.br/servicos/acompanhamento-de-obras/" />
   <meta name="robots" content="index,follow" />
 
@@ -45,26 +45,31 @@
     "@graph":[
       {
         "@type":"ProfessionalService",
+        "@id":"https://marcosneto.com.br/#business",
         "name":"Engenheiro Marcos Neto",
-        "url":"https://marcosneto.com.br",
+        "url":"https://marcosneto.com.br/",
         "image":"https://marcosneto.com.br/img/capa2.png",
-        "areaServed":"BR",
         "telephone":"+55-32-99951-8800",
         "email":"marcosrsneto@gmail.com",
+        "priceRange":"$$",
+        "areaServed":[
+          { "@type":"City", "name":"Juiz de Fora" },
+          { "@type":"Country", "name":"Brasil" }
+        ],
         "sameAs":[ "https://instagram.com/marcosneto.eng" ]
       },
       {
         "@type":"Service",
-        "name":"Acompanhamento de Obras (Vistorias e Responsabilidade Técnica)",
+        "@id":"https://marcosneto.com.br/servicos/acompanhamento-de-obras/#service",
+        "name":"Acompanhamento de Obras (Vistorias e Orientação Técnica)",
         "serviceType":"Acompanhamento de obras",
-        "provider":{
-          "@type":"ProfessionalService",
-          "name":"Engenheiro Marcos Neto",
-          "url":"https://marcosneto.com.br"
-        },
-        "areaServed":"BR",
+        "provider":{ "@id":"https://marcosneto.com.br/#business" },
+        "areaServed":[
+          { "@type":"City", "name":"Juiz de Fora" },
+          { "@type":"Country", "name":"Brasil" }
+        ],
         "url":"https://marcosneto.com.br/servicos/acompanhamento-de-obras/",
-        "description":"Acompanhamento de obras com vistorias, checklists e orientações para reduzir retrabalho, verificar execução e apoiar decisões na obra."
+        "description":"Acompanhamento de obras em Juiz de Fora – MG com vistorias, checklists e orientação técnica para reduzir retrabalho, verificar etapas críticas e apoiar decisões na execução."
       },
       {
         "@type":"BreadcrumbList",
@@ -77,6 +82,7 @@
     ]
   }
   </script>
+
 </head>
 
 <body class="page-service">
