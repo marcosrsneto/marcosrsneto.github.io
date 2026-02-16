@@ -1,43 +1,50 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <!-- Favicons (mantive seu padrão) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/favoricon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png">
-  <link rel="apple-touch-icon" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png" type="image/png">
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <!-- SEO primário -->
   <title>Projeto Estrutural em Juiz de Fora – MG | Concreto e Metálicas | Eng. Marcos Neto</title>
-  <meta name="description" content="Projeto estrutural em Juiz de Fora – MG (concreto armado e metálicas), com cálculo, detalhamento e pranchas para obra. Atendimento remoto para todo o Brasil." />
+  <meta name="description"
+        content="Projeto estrutural em Juiz de Fora – MG (concreto armado e metálicas), com cálculo, detalhamento executivo e pranchas para obra. Atendimento presencial em Juiz de Fora e Cataguases e remoto para todo o Brasil." />
   <link rel="canonical" href="https://marcosneto.com.br/servicos/projeto-estrutural/" />
   <meta name="robots" content="index,follow" />
+
+  <!-- Favicons (arquivos na RAIZ do site) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Engenheiro Marcos Neto">
-  <meta property="og:title" content="Projeto Estrutural (Concreto e Metálicas) | Eng. Marcos Neto">
-  <meta property="og:description" content="Projeto estrutural completo e executável: análise, dimensionamento e detalhamento. Atendimento para todo o Brasil.">
+  <meta property="og:title" content="Projeto Estrutural em Juiz de Fora – MG | Eng. Marcos Neto">
+  <meta property="og:description"
+        content="Projeto estrutural em concreto armado e metálicas com dimensionamento, detalhamento e pranchas executivas. Atendimento em Juiz de Fora e Cataguases e remoto para todo o Brasil.">
   <meta property="og:url" content="https://marcosneto.com.br/servicos/projeto-estrutural/">
   <meta property="og:image" content="https://marcosneto.com.br/img/capa2.png">
+  <meta property="og:locale" content="pt_BR">
 
-  <!-- Twitter (opcional) -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Projeto Estrutural | Eng. Marcos Neto">
-  <meta name="twitter:description" content="Projeto estrutural em concreto e metálicas, com detalhamento executivo e foco em obra.">
+  <meta name="twitter:title" content="Projeto Estrutural em Juiz de Fora – MG | Eng. Marcos Neto">
+  <meta name="twitter:description"
+        content="Projeto estrutural em concreto e metálicas, com detalhamento executivo e foco em obra executável.">
   <meta name="twitter:image" content="https://marcosneto.com.br/img/capa2.png">
 
-  <!-- Fonts (mantive seu padrão) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Seu CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="/styles.css" />
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -55,38 +62,23 @@
           {
             "@type":"City",
             "name":"Juiz de Fora",
-            "address":{
-              "@type":"PostalAddress",
-              "addressRegion":"MG",
-              "addressCountry":"BR"
-            }
+            "address":{"@type":"PostalAddress","addressRegion":"MG","addressCountry":"BR"}
           },
           {
             "@type":"City",
             "name":"Cataguases",
-            "address":{
-              "@type":"PostalAddress",
-              "addressRegion":"MG",
-              "addressCountry":"BR"
-            }
+            "address":{"@type":"PostalAddress","addressRegion":"MG","addressCountry":"BR"}
           },
-          {
-            "@type":"Country",
-            "name":"Brasil"
-          }
+          { "@type":"Country", "name":"Brasil" }
         ],
-        "sameAs":[
-          "https://instagram.com/marcosneto.eng"
-        ]
+        "sameAs":[ "https://instagram.com/marcosneto.eng" ]
       },
       {
         "@type":"Service",
         "@id":"https://marcosneto.com.br/servicos/projeto-estrutural/#service",
         "name":"Projeto Estrutural (Concreto Armado e Estruturas Metálicas)",
         "serviceType":"Projeto estrutural",
-        "provider":{
-          "@id":"https://marcosneto.com.br/#business"
-        },
+        "provider":{ "@id":"https://marcosneto.com.br/#business" },
         "areaServed":[
           { "@type":"City", "name":"Juiz de Fora" },
           { "@type":"City", "name":"Cataguases" },
@@ -102,11 +94,26 @@
           { "@type":"ListItem", "position":2, "name":"Serviços", "item":"https://marcosneto.com.br/#servicos" },
           { "@type":"ListItem", "position":3, "name":"Projeto Estrutural", "item":"https://marcosneto.com.br/servicos/projeto-estrutural/" }
         ]
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://marcosneto.com.br/#website",
+        "url":"https://marcosneto.com.br/",
+        "name":"Engenheiro Marcos Neto",
+        "inLanguage":"pt-BR"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://marcosneto.com.br/servicos/projeto-estrutural/#webpage",
+        "url":"https://marcosneto.com.br/servicos/projeto-estrutural/",
+        "name":"Projeto Estrutural em Juiz de Fora – MG | Eng. Marcos Neto",
+        "isPartOf":{"@id":"https://marcosneto.com.br/#website"},
+        "about":{"@id":"https://marcosneto.com.br/#business"},
+        "inLanguage":"pt-BR"
       }
     ]
   }
   </script>
-
 </head>
 
 <body class="page-service">
