@@ -1,37 +1,41 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/favoricon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png">
-  <link rel="apple-touch-icon" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png" type="image/png">
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- SEO primário -->
-  <title>Usucapião | Levantamento Técnico e Documentação | Engenheiro Marcos Neto</title>
+  <title>Usucapião em Juiz de Fora e Cataguases | Planta e Memorial Descritivo | Eng. Marcos Neto</title>
   <meta name="description"
-        content="Usucapião com levantamento técnico, memorial descritivo, planta e documentação para processo judicial ou extrajudicial. Atendimento para todo o Brasil." />
-  <link rel="canonical" href="https://marcosneto.com.br/servicos/usucapiao/" />
+        content="Engenheiro para usucapião em Juiz de Fora e Cataguases (MG). Plantas, memorial descritivo e levantamento para processo judicial ou extrajudicial. Atendimento seguro e organizado." />
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://marcosneto.com.br/servicos/usucapiao/" />
+
+  <!-- Consistência visual / mobile -->
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+
+  <!-- Favicons (recomendado na RAIZ) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Engenheiro Marcos Neto">
-  <meta property="og:title" content="Usucapião | Eng. Marcos Neto">
+  <meta property="og:title" content="Usucapião: Planta e Memorial Descritivo | Eng. Marcos Neto">
   <meta property="og:description"
-        content="Levantamento técnico, memorial descritivo, planta e documentação para usucapião — com clareza e segurança técnica.">
+        content="Levantamento técnico, planta e memorial descritivo para usucapião judicial/extrajudicial, com organização e clareza.">
   <meta property="og:url" content="https://marcosneto.com.br/servicos/usucapiao/">
   <meta property="og:image" content="https://marcosneto.com.br/img/capa2.png">
   <meta property="og:locale" content="pt_BR">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Usucapião | Eng. Marcos Neto">
+  <meta name="twitter:title" content="Usucapião: Planta e Memorial Descritivo | Eng. Marcos Neto">
   <meta name="twitter:description"
-        content="Documentação técnica para usucapião (planta e memorial) com organização e consistência.">
+        content="Documentação técnica para usucapião (planta e memorial) com consistência e segurança técnica.">
   <meta name="twitter:image" content="https://marcosneto.com.br/img/capa2.png">
 
   <!-- Fonts -->
@@ -39,7 +43,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- CSS global -->
   <link rel="stylesheet" href="/styles.css" />
 
   <!-- Structured Data -->
@@ -49,24 +52,30 @@
     "@graph":[
       {
         "@type":"ProfessionalService",
+        "@id":"https://marcosneto.com.br/#business",
         "name":"Engenheiro Marcos Neto",
-        "url":"https://marcosneto.com.br",
+        "url":"https://marcosneto.com.br/",
         "image":"https://marcosneto.com.br/img/capa2.png",
-        "areaServed":"BR",
         "telephone":"+55-32-99951-8800",
         "email":"marcosrsneto@gmail.com",
+        "areaServed":[
+          { "@type":"City", "name":"Juiz de Fora" },
+          { "@type":"City", "name":"Cataguases" },
+          { "@type":"Country", "name":"Brasil" }
+        ],
         "sameAs":[ "https://instagram.com/marcosneto.eng" ]
       },
       {
         "@type":"Service",
-        "name":"Usucapião (Levantamento Técnico e Documentação)",
+        "@id":"https://marcosneto.com.br/servicos/usucapiao/#service",
+        "name":"Usucapião em Juiz de Fora e Cataguases | Eng. Marcos Neto",
         "serviceType":"Documentação técnica para usucapião",
-        "provider":{
-          "@type":"ProfessionalService",
-          "name":"Engenheiro Marcos Neto",
-          "url":"https://marcosneto.com.br"
-        },
-        "areaServed":"BR",
+        "provider":{ "@id":"https://marcosneto.com.br/#business" },
+        "areaServed":[
+          { "@type":"City", "name":"Juiz de Fora" },
+          { "@type":"City", "name":"Cataguases" },
+          { "@type":"Country", "name":"Brasil" }
+        ],
         "url":"https://marcosneto.com.br/servicos/usucapiao/",
         "description":"Levantamento técnico, planta e memorial descritivo para instrução de usucapião judicial ou extrajudicial, com organização documental e consistência técnica."
       },
@@ -77,11 +86,29 @@
           { "@type":"ListItem", "position":2, "name":"Serviços", "item":"https://marcosneto.com.br/#servicos" },
           { "@type":"ListItem", "position":3, "name":"Usucapião", "item":"https://marcosneto.com.br/servicos/usucapiao/" }
         ]
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://marcosneto.com.br/#website",
+        "url":"https://marcosneto.com.br/",
+        "name":"Engenheiro Marcos Neto",
+        "inLanguage":"pt-BR"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://marcosneto.com.br/servicos/usucapiao/#webpage",
+        "url":"https://marcosneto.com.br/servicos/usucapiao/",
+        "name":"Usucapião: Planta e Memorial Descritivo | Engenheiro Marcos Neto",
+        "isPartOf":{"@id":"https://marcosneto.com.br/#website"},
+        "about":{"@id":"https://marcosneto.com.br/#business"},
+        "mainEntity":{"@id":"https://marcosneto.com.br/servicos/usucapiao/#service"},
+        "inLanguage":"pt-BR"
       }
     ]
   }
   </script>
 </head>
+
 
 <body class="page-service">
   <!-- Background -->
