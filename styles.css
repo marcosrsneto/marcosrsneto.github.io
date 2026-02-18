@@ -1282,3 +1282,8 @@ section#contato-rapido.section {
   height: 1px;
   overflow: hidden;
 }
+
+
+.heroClean__lead + .heroClean__lead {
+  margin-top: 6px; /* ajuste fino */
+}
