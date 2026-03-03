@@ -1,3 +1,4 @@
+
 :root{
   /* Base (mais “Stone-like”: branco, limpo, editorial) */
   --bg:#ffffff;
@@ -236,7 +237,7 @@ button.heroMini__item{
 /* ====== grids ====== */
 .grid3{display:grid;gap:16px;margin-top:26px}
 @media(min-width:720px){.grid3{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.grid3{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.grid3{grid-template-columns:repeat(2,1fr)}}
 
 /* ====== Cards (mais “construtora”: simples e consistente) ====== */
 .card{
@@ -1287,3 +1288,44 @@ section#contato-rapido.section {
 .heroClean__lead + .heroClean__lead {
   margin-top: 6px; /* ajuste fino */
 }
+
+.serviceHead{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.serviceHead__left{
+  flex:1;
+  min-width:0;   /* ESSENCIAL */
+}
+
+/* micro-indicador */
+.serviceHint{
+  flex:0 0 auto;
+  white-space:nowrap;
+  pointer-events:none;
+
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  padding:3px 7px;
+  border-radius:999px;
+
+  border:1px solid rgba(11, 99, 246, .30);
+  color: var(--blue);
+  opacity:.65;
+
+  /* garante que não “rouba” layout */
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.card:hover .serviceHint{
+  opacity:1;
+  background: rgba(11, 99, 246, .08);
+}
+
+
