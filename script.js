@@ -272,8 +272,6 @@ function hydrateProfile() {
 
 
 
-
-
 function renderServices() {
   const grid = $("#servicesGrid");
   if (!grid) return;
@@ -282,8 +280,6 @@ function renderServices() {
     const url = s.url ? String(s.url) : "";
     const clickable = !!url;
 
-    // se tiver URL: vira <a class="card ..."> (mantém visual)
-    // se não tiver: vira <article class="card ..."> (normal)
     const tagOpen = clickable
       ? `<a class="card reveal serviceCard" href="${escapeHtml(url)}" aria-label="${escapeHtml(s.title)}">`
       : `<article class="card reveal">`;
@@ -292,11 +288,13 @@ function renderServices() {
 
     return `
       ${tagOpen}
-        <div class="card__head">
-          <div>
+        <div class="card__head serviceHead">
+          <div class="serviceHead__left">
             <div class="card__title">${escapeHtml(s.title)}</div>
             <div class="card__sub">${escapeHtml(s.meta)}</div>
           </div>
+
+          <span class="serviceHint mono" aria-hidden="true">Clique</span>
         </div>
 
         <p style="margin:12px 0 0; color: var(--muted); line-height: 1.7">
